@@ -3,7 +3,7 @@ import  java.util.Scanner;
 
 public class ContaSalario {
     Scanner contasalario = new Scanner(System.in);
-    String nomeConta = "Milena Fernandes";
+    String nomeConta = "Milena";
     int numeroConta = 9872;
     String nomeBanco = "Nubank";
     double saldo = 1800;
@@ -48,9 +48,14 @@ public class ContaSalario {
             if(valorsaque <= getSaldo() ){
                 saldofinal = getSaldo() - valorsaque;
                 System.out.println("Você sacou : " + valorsaque);
-                System.out.println("Saldo Atual : " + getSaldo());
+                setSaldo(saldofinal);
             }else { 
                 System.out.println("Saldo Isuficiente ");
             }
+        }
+        
+        public void versaldo() {
+        	System.out.println(" -- VER SALDO -- ");
+        	System.out.println(" SALDO ATUAL : " + getSaldo());
         }
 } 

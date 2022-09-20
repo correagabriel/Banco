@@ -4,7 +4,7 @@ import java.util.Scanner;
 public class ContaCorrente {
     Scanner contacorrente = new Scanner(System.in);
 
-    String nomeConta = "Gabriel Corrêa ";
+    String nomeConta = "Gabriel";
     int numeroConta = 9872;
     String nomeBanco = "Santander";
     double saldo = 1500;
@@ -52,12 +52,13 @@ public class ContaCorrente {
 
         //metodo sacar
         public void sacar (){
-            System.out.println(" -- SACAR -- ");
             System.out.println("Quantidade que irá sacar : ");
             Double valorsaque = contacorrente.nextDouble();
             if(valorsaque <= getSaldo() ){
                 saldoFinal = getSaldo() - valorsaque;
+                System.out.println("");
                 System.out.println("Você sacou : " + valorsaque);
+                setSaldo(saldoFinal);
                 System.out.println("Saldo Atual : " + getSaldo());
             }else { 
                 System.out.println("Saldo Isuficiente ");
@@ -66,12 +67,12 @@ public class ContaCorrente {
 
         //metodos DEPOSITAR 
         public void depositar (){
-            System.out.println(" -- DEPOSITAR -- ");
             System.out.println("Quantidade que irá depositar : ");
                 double valordeposito = contacorrente.nextDouble();
                 saldoFinal = getSaldo() + valordeposito;
-                System.out.println("Saldo Atual : " + saldo);
+                setSaldo(saldoFinal);
         }
+        
 
 
 }
